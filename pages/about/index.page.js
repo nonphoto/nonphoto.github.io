@@ -1,7 +1,5 @@
-import "./index.css";
-
 export { Page };
 
 function Page() {
-  return "about";
+  return { tagName: "a", href: "/", children: "Home" };
 }

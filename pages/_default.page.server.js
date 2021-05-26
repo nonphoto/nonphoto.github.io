@@ -15,7 +15,7 @@ function render({ Page, pageContext }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        ${html.dangerouslySetHtml(serialize(Page(pageContext.pageProps)))}
+        ${html.dangerouslySetHtml(serialize(Page(pageContext)))}
       </body>
     </html>
   `;
