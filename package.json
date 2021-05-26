@@ -11,5 +11,9 @@
     "express": "^4.17.1",
     "vite": "^2.3.4",
     "vite-plugin-ssr": "0.1.0-beta.45"
+  },
+  "dependencies": {
+    "@nonphoto/bloom": "^1.0.3",
+    "s-js": "^0.4.9"
   }
 }

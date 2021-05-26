@@ -1,4 +1,5 @@
 import { html } from "vite-plugin-ssr";
+import { serialize } from "@nonphoto/bloom";
 
 export { render };
 export { passToClient };
@@ -14,7 +15,7 @@ function render({ Page, pageContext }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
       <body>
-        ${Page(pageContext.pageProps)}
+        ${html.dangerouslySetHtml(serialize(Page(pageContext.pageProps)))}
       </body>
     </html>
   `;
