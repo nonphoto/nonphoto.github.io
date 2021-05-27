@@ -1,9 +1,10 @@
-import box from "/components/box.js";
+import Image from "/components/Image.js";
+import images from "/data/images/";
 
 export function Page() {
   return {
     children: [
-      box({ pos: [100, 100] }),
+      Image({ ...images[0], pos: [100, 100] }),
       { tagName: "a", href: "/", children: "Home" },
     ],
   };

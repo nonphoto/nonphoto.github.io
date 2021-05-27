@@ -1,5 +1,6 @@
 import S from "s-js";
-import box from "/components/box.js";
+import Image from "/components/Image.js";
+import images from "/data/images/";
 
 export { Page };
 
@@ -15,7 +16,7 @@ function Page() {
   return {
     style: { color: "red" },
     children: [
-      box({ pos: [0, 0] }),
+      Image({ ...images[0], pos: [0, 0] }),
       { children: ["hello: ", time] },
       { tagName: "a", href: "/about", children: "About" },
     ],

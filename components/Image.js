@@ -106,14 +106,13 @@ function animatedElement(context) {
   return { element, projection, layoutTrigger };
 }
 
-export default function ({ pos }) {
-  const element = S.data();
-  const [layoutRect] = getLayoutRect(element, element);
+export default function ({ pos, ref }) {
+  const [layoutRect] = getLayoutRect(ref, ref);
   const targetRect = animateRect(layoutRect);
-  projectElement(element, targetRect, layoutRect);
+  projectElement(ref, targetRect, layoutRect);
   const [top, right] = pos;
   return {
-    ref: element,
+    ref,
     class: css({
       position: "absolute",
       background: "#aab",
