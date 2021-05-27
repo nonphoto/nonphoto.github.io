@@ -2,16 +2,19 @@ import { useClientRouter } from "vite-plugin-ssr/client/router";
 import { patch } from "@nonphoto/bloom";
 import S from "s-js";
 
-const page = S.data();
+const renderResult = S.data();
 
 S.root(() => {
-  patch(document.body, page);
+  S(() => {
+    if (renderResult()) {
+      const { Page, pageContext } = renderResult();
+      patch(document.body, Page(pageContext));
+    }
+  });
 });
 
 useClientRouter({
-  async render({ Page, pageContext }) {
-    page(Page(pageContext));
-  },
+  render: renderResult,
   onTransitionStart() {},
   onTransitionEnd() {},
 });

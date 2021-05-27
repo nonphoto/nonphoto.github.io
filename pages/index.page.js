@@ -1,5 +1,5 @@
 import S from "s-js";
-import "/components/test.js";
+import box from "/components/box.js";
 
 export { Page };
 
@@ -15,6 +15,7 @@ function Page() {
   return {
     style: { color: "red" },
     children: [
+      box({ pos: [0, 0] }),
       { children: ["hello: ", time] },
       { tagName: "a", href: "/about", children: "About" },
     ],

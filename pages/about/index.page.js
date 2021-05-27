@@ -1,5 +1,10 @@
-export { Page };
+import box from "/components/box.js";
 
-function Page() {
-  return { tagName: "a", href: "/", children: "Home" };
+export function Page() {
+  return {
+    children: [
+      box({ pos: [100, 100] }),
+      { tagName: "a", href: "/", children: "Home" },
+    ],
+  };
 }
