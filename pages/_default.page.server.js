@@ -3,12 +3,9 @@ import { serialize } from "@nonphoto/bloom";
 import { extractCss } from "goober";
 import S from "s-js";
 
-export { render };
-export { passToClient };
+export const passToClient = ["routeParams"];
 
-const passToClient = ["pageProps"];
-
-function render({ Page, pageContext }) {
+export function render({ Page, pageContext }) {
   const content = S.root(() => {
     return serialize(Page(pageContext));
   });

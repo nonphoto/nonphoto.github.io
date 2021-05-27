@@ -1,4 +1,3 @@
-import { css } from "goober";
 import { animate, mix } from "popmotion";
 import { layoutNode, updateProjectionStyle } from "projection";
 import S from "s-js";
@@ -90,37 +89,23 @@ function projectElement(
   });
 }
 
-function animatedElement(context) {
-  const element = S.data();
-  const [layoutRect, layoutTrigger] = getLayoutRect(
-    element,
-    context.layoutTrigger
-  );
-  const targetRect = animateRect(layoutRect);
-  const projection = projectElement(
-    element,
-    targetRect,
-    layoutRect,
-    context.projection
-  );
-  return { element, projection, layoutTrigger };
-}
-
-export default function ({ pos, ref }) {
+export default function ({ ref, image, id }) {
+  const { width, height, src } = image;
   const [layoutRect] = getLayoutRect(ref, ref);
   const targetRect = animateRect(layoutRect);
-  projectElement(ref, targetRect, layoutRect);
-  const [top, right] = pos;
+  projectElement(ref, targetRect, layoutRect, undefined, 4);
   return {
-    ref,
-    class: css({
-      position: "absolute",
-      background: "#aab",
-      top: top + "px",
-      right: right + "px",
-      width: "10rem",
-      height: "10rem",
-      borderRadius: "1rem",
-    }),
+    tagName: "a",
+    href: `/image/${id}`,
+    children: {
+      tagName: "img",
+      src,
+      ref,
+      style: {
+        maxWidth: "100%",
+        maxHeight: "100%",
+        borderRadius: "4px",
+      },
+    },
   };
 }
