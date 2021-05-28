@@ -91,6 +91,7 @@ function projectElement(
 
 export default function ({ ref, image, id }) {
   const { width, height, src } = image;
+  console.log(width, height);
   const [layoutRect] = getLayoutRect(ref, ref);
   const targetRect = animateRect(layoutRect);
   projectElement(ref, targetRect, layoutRect, undefined, 4);
