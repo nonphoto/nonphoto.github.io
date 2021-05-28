@@ -14,6 +14,7 @@
     "goober": "^2.0.37",
     "popmotion": "^9.3.6",
     "projection": "^2.0.0-alpha.3",
-    "s-js": "^0.4.9"
+    "s-js": "^0.4.9",
+    "vite-imagetools": "^3.6.8"
   }
 }
