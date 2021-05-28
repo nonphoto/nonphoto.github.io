@@ -1,7 +1,7 @@
 import S from "s-js";
 
-import sprayImage from "./spray.png?metadata";
-import classonDemoImage from "./classon-demo.png?metadata";
+import sprayImage from "./spray.png";
+import classonDemoImage from "./classon-demo.png";
 import classonDemoVideo from "./classon-demo.mp4";
 
 export default [
